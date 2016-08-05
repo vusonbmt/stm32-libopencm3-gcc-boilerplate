@@ -1,7 +1,6 @@
 /*
  * This file is part of the libopencm3 project.
  *
- * (C) Copyright 2015 Greenbot JSC (http://greenbot.io/) and others.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
