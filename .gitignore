@@ -7,3 +7,4 @@ firmware/
 include/config.local.h
 .map
 *.sublime-workspace
+*.map
