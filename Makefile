@@ -12,20 +12,9 @@ ARCH_FLAGS	= -mthumb -mcpu=cortex-m3 $(FP_FLAGS) -mfix-cortex-m3-ldrd
 
 # Path configurations
 
-ifeq ($(OS),Windows_NT)
-	#Windows user
-	OPENOCD_DIR ?= "D:\opentools\OpenOCD-0.9.0-Win32"
-	OPENCM3_DIR	?= "D:\opentools\stm32\libopencm3"
-	CC_PATH ?= "D:\opentools\stm32\gcc\bin"
-else
-    UNAME_S := $(shell uname -s)
-		#OSX user
-    ifeq ($(UNAME_S),Darwin)
-			OPENOCD_DIR ?= "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"
-			OPENCM3_DIR	?= /tools/stm32/libopencm3
-			CC_PATH ?= /tools/stm32/gcc/bin
-    endif
-endif
+OPENOCD_DIR ?= "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"
+OPENCM3_DIR ?= /tools/stm32/libopencm3
+CC_PATH ?= /tools/stm32/gcc/bin
 
 
 OPENOCD = $(OPENOCD_DIR)/bin/openocd
