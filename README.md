@@ -4,8 +4,8 @@
 
 ## Trình biên dịch
 
-Tải và cài đặt: https://launchpad.net/gcc-arm-embedded/+download
-Cấu hình ENV PATH 
+- Tải và cài đặt GCC for ARM: https://launchpad.net/gcc-arm-embedded/+download
+- Cấu hình ENV PATH 
 
 ## Libopencm3
 
@@ -19,7 +19,8 @@ cd libopencm3 && make
 
 ## OpenOCD 
 
-Tải về, cài đặt và cung cấp đường dẫn cho Makefile khi nạp sử dụng ST-Linkv2, Mặc định: `OPENOCD_DIR = "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"` 
+Tải về, cài đặt và cung cấp đường dẫn cho Makefile khi nạp sử dụng ST-Linkv2, 
+Mặc định: `OPENOCD_DIR = "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"` 
 
 ## Sử dụng
 
@@ -38,5 +39,5 @@ make flash
 
 ## Bản quyền: 
 
-Thư viện libopencm3 LGPL
-Toàn bộ phát sinh dự án mẫu giữ bản quyền CC-BY ![CC-BY](https://licensebuttons.net/l/by/3.0/88x31.png)
+- Thư viện libopencm3 LGPL
+-Toàn bộ phát sinh dự án mẫu giữ bản quyền CC-BY ![CC-BY](https://licensebuttons.net/l/by/3.0/88x31.png)
