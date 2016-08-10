@@ -26,7 +26,7 @@
         // "k/r" "stroustrup", "whitesmith", "banner", "gnu", "linux", "horstmann",
         // "1tbs", "otbs ", "google", "pico", "lisp", "python", "vtk", or null
         // for default.
-        "style": "allman",
+        "style": "k&r",
 
         // Tab options
         // "indent": Can be one of "spaces", "tab" "force-tab", "force-tab-x", or null
@@ -79,11 +79,11 @@
 
         // Indent 'switch' blocks so that the 'case X:' statements are indented
         // in the switch block. The entire case block is indented.
-        "indent-switches": false,
+        "indent-switches": true,
 
         // Indent 'case X:' blocks from the 'case X:' headers. Case statements
         // not enclosed in blocks are NOT indented.
-        "indent-cases": false,
+        "indent-cases": true,
 
         // Add extra indentation to namespace blocks. This option has
         // no effect on Java files.
@@ -91,7 +91,7 @@
 
         // Add extra indentation to labels so they appear 1 indent less than the
         // current indentation, rather than being flushed to the left (the default).
-        "indent-labels": false,
+        "indent-labels": true,
 
         // Indent preprocessor blocks at bracket level zero, and immediately within
         // a namespace. There are restrictions on what will be indented. Blocks
@@ -238,7 +238,7 @@
         // currently requested predefined style or bracket type. If no style or bracket type is
         // requested the brackets will be attached. If `add-one-line-brackets` is also used the
         // result will be one line brackets.
-        "add-brackets": false,
+        "add-brackets": true,
 
         // Add one line brackets to unbracketed one line conditional statements
         // (e.g. 'if', 'for', 'while'...). The statement must be on a single line.

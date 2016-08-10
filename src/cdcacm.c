@@ -206,30 +206,30 @@ static int cdcacm_control_request(usbd_device *usbd_dev,
 
   switch (req->bRequest)
   {
-    case USB_CDC_REQ_SET_CONTROL_LINE_STATE:
+  case USB_CDC_REQ_SET_CONTROL_LINE_STATE:
 
-      //cdcacm_set_modem_state(usbd_dev, req->wIndex, true, true);
+    //cdcacm_set_modem_state(usbd_dev, req->wIndex, true, true);
 
-      //if (req->wValue & 0x01) //DTR
+    //if (req->wValue & 0x01) //DTR
 
-      //if (req->wValue & 0x02) //RTS
+    //if (req->wValue & 0x02) //RTS
 
-      return 1;
+    return 1;
 
-    case USB_CDC_REQ_SET_LINE_CODING:
+  case USB_CDC_REQ_SET_LINE_CODING:
 
-      if (*len < sizeof(struct usb_cdc_line_coding))
-        return 0;
+    if (*len < sizeof(struct usb_cdc_line_coding))
+      return 0;
 
-      switch (req->wIndex)
-      {
-        case 2:
-        //usbuart_set_line_coding((struct usb_cdc_line_coding*)*buf);
-        case 0:
-          return 0; /* Ignore on GDB Port */
-        default:
-          return 0;
-      }
+    switch (req->wIndex)
+    {
+    case 2:
+    //usbuart_set_line_coding((struct usb_cdc_line_coding*)*buf);
+    case 0:
+      return 0; /* Ignore on GDB Port */
+    default:
+      return 0;
+    }
   }
   return 0;
 }
