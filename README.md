@@ -1,15 +1,17 @@
 #PROJECT SUMARY
 
+![Travis](https://travis-ci.org/genuine-engineering/stm32-libopencm3-gcc-boilerplate.svg?branch=master)
+
 # Installation
 
-## Trình biên dịch
+## Compiler
 
-- Tải và cài đặt GCC for ARM: https://launchpad.net/gcc-arm-embedded/+download
-- Cấu hình ENV PATH 
+- Download and install GCC for ARM: https://launchpad.net/gcc-arm-embedded/+download
+- Set ENV PATH for GCC
 
 ## Libopencm3
 
-Clone thư viện `libopencm3` và biên dịch, lưu ý, cần cung cấp đầy đủ đường dẫn do dự án. Trong ví dụ dưới đây, đường dẫn libopencm3 `OPENCM3_DIR = /tools/stm32/libopencm3`
+Clone `libopencm3` library and compile, set  `OPENCM3_DIR = /tools/stm32/libopencm3` in make file of this project
 
 ```
 cd /tools/stm32
@@ -19,25 +21,24 @@ cd libopencm3 && make
 
 ## OpenOCD 
 
-Tải về, cài đặt và cung cấp đường dẫn cho Makefile khi nạp sử dụng ST-Linkv2, 
-Mặc định: `OPENOCD_DIR = "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"` 
+Install and provide variable PATH for Makefile: `OPENOCD_DIR = "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"` 
 
-## Sử dụng
+## Usage
 
-Biên dịch:
+Compile:
 
 ```
-https://github.com/genuine-engineering/stm32-libopencm3-gcc-boilerplate.git
+git clone https://github.com/genuine-engineering/stm32-libopencm3-gcc-boilerplate.git
 cd stm32-libopencm3-gcc-boilerplate && make
 ```
 
-Nạp cho STM32 sử dụng ST-Linkv2, SWD, OpenOCD:
+Program STM32 using ST-Linkv2, SWD, OpenOCD:
 
 ```
 make flash
 ```
 
-## Bản quyền: 
+## License: 
 
-- Thư viện libopencm3 LGPL
--Toàn bộ phát sinh dự án mẫu giữ bản quyền CC-BY ![CC-BY](https://licensebuttons.net/l/by/3.0/88x31.png)
+- libopencm3 LGPL
+- This project CC-BY ![CC-BY](https://licensebuttons.net/l/by/3.0/88x31.png)

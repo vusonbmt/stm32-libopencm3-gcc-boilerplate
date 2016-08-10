@@ -238,7 +238,7 @@
         // currently requested predefined style or bracket type. If no style or bracket type is
         // requested the brackets will be attached. If `add-one-line-brackets` is also used the
         // result will be one line brackets.
-        "add-brackets": true,
+        "add-brackets": ,
 
         // Add one line brackets to unbracketed one line conditional statements
         // (e.g. 'if', 'for', 'while'...). The statement must be on a single line.
