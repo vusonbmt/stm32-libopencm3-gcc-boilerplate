@@ -13,7 +13,7 @@ ARCH_FLAGS	= -mthumb -mcpu=cortex-m3 $(FP_FLAGS) -mfix-cortex-m3-ldrd
 # Path configurations
 
 OPENOCD_DIR ?= "/Applications/GNU ARM Eclipse/OpenOCD/0.8.0-201503201802"
-OPENCM3_DIR ?= /tools/stm32/libopencm3
+OPENCM3_DIR ?= vendor/libopencm3
 CC_PATH ?= /tools/stm32/gcc/bin
 
 
@@ -138,6 +138,14 @@ endef
 
 all: checkdirs $(HEX_OUT)
 
+libopencm3/Makefile:
+	$(Q) echo "No libesphttpd submodule found. Using git to fetch it..."
+	$(Q) git submodule init
+	$(Q) git submodule update
+
+libopencm3: libopencm3/Makefile
+	$(Q) make -C vendor/libopencm3
+
 flash:
 	$(OPENOCD) 	-s $(OPENOCD_DIR)\
 			   	-f interface/stlink-v2.cfg\
@@ -147,7 +155,7 @@ flash:
 		        -c "verify_image $(HEX_OUT)" \
 		        -c "reset run" -c shutdown
 
-$(HEX_OUT): $(TARGET_OUT)
+$(HEX_OUT): libopencm3 $(TARGET_OUT)
 	$(vecho) "OBJCOPY $@"
 	$(Q) $(OBJCOPY) -Oihex $(TARGET_OUT) $@
 	$(Q) $(SZ) $(TARGET_OUT)

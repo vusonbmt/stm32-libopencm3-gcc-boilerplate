@@ -43,3 +43,24 @@ static void clock_init(void)
   rcc_periph_clock_enable(RCC_AFIO);
   rcc_periph_clock_enable(RCC_I2C2);
 }
+
+/* Output for printf */
+int _write(int file, char *ptr, int len);
+int _write(int file, char *ptr, int len)
+{
+  int i;
+  if (file == STDOUT_FILENO || file == STDERR_FILENO)
+  {
+    for (i = 0; i < len; i++)
+    {
+      if (ptr[i] == '\n')
+      {
+        cdcacm_input('\r');
+      }
+      cdcacm_input(ptr[i]);
+    }
+    return i;
+  }
+  errno = EIO;
+  return -1;
+}
