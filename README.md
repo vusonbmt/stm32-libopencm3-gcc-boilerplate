@@ -3,21 +3,24 @@
 ![Travis](https://travis-ci.org/genuine-engineering/stm32-libopencm3-gcc-boilerplate.svg?branch=master)
 
 # Installation
+## Prerequisites
 
-## Compiler
+### For Ubuntu/Fedora:
 
-- Download and install GCC for ARM: https://launchpad.net/gcc-arm-embedded/+download
-- Set ENV PATH for GCC
+- An `arm-none-eabi/arm-elf` toolchain.
 
-## Libopencm3
+### For Windows:
 
-Clone `libopencm3` library and compile, set  `OPENCM3_DIR = /tools/stm32/libopencm3` in make file of this project
+Download and install:
+
+- `msys` - http://sourceforge.net/projects/mingw/files/MSYS/Base/msys-core/msys-1.0.11/MSYS-1.0.11.exe
+- `arm-none-eabi/arm-elf` toolchain (for example this one https://launchpad.net/gcc-arm-embedded)
+- Run msys shell and set the path without standard Windows paths, so Windows programs such as 'find' won't interfere:
 
 ```
-cd /tools/stm32
-git clone https://github.com/libopencm3/libopencm3.git
-cd libopencm3 && make
+export PATH="/c//Python27:/c/ARMToolchain/bin:/usr/local/bin:/usr/bin:/bin"
 ```
+
 
 ## OpenOCD 
 
