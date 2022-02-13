@@ -1,5 +1,5 @@
 #PROJECT SUMARY
-
+Build result and artifact on CircleCI [![CircleCI](https://circleci.com/gh/vusonbmt/stm32-libopencm3-gcc-boilerplate.svg?style=svg)](https://circleci.com/gh/vusonbmt/stm32-libopencm3-gcc-boilerplate)
 
 
 # Installation
