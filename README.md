@@ -1,6 +1,6 @@
 #PROJECT SUMARY
 
-![Travis](https://travis-ci.org/genuine-engineering/stm32-libopencm3-gcc-boilerplate.svg?branch=master)
+
 
 # Installation
 ## Prerequisites
